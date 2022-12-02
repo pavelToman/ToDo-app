@@ -5,5 +5,3 @@ COPY . .
 
 RUN pip install poetry djangorestframework django-cors-headers
 RUN poetry install
-
-EXPOSE 8000
