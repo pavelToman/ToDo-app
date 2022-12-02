@@ -1,10 +1,8 @@
 version: "3.9"
 services:
-  frontend:
-    build: .
-    ports:
-      - "8000:8000"
+  # frontend:
+  #   build: .
+  #   ports:
+  #     - "8000:8000"
   backend:
-    image: postgres
-    ports:
-      - "8001:5432"
+    build: src/backend

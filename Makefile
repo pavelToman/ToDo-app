@@ -7,7 +7,7 @@ bash-backend: build-backend
 	$(RUN_BACKEND) sh
 
 run-backend: build-backend
-	$(RUN_BACKEND) python3 manage.py runserver 0.0.0.0:8000
+	$(RUN_BACKEND) 
 
 build-frontend:
 	docker build -t frontend_todo src/frontend
@@ -19,4 +19,7 @@ bash-frontend: build-frontend
 
 run-frontend: build-frontend
 	$(RUN_FRONTEND) npm run dev
+
+up: 
+	docker compose up
 	
