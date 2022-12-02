@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "todo-backend"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Grochal"]
+readme = "README.md"
+packages = [{include = "todo_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.3"
+djangorestframework = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
