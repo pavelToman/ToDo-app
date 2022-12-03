@@ -1,6 +1,8 @@
 # Compose
 up: 
 	docker compose up
+down:
+	docker compose down
 
 # Backend
 build-backend:
@@ -19,7 +21,7 @@ build-frontend:
 
 RUN_FRONTEND = docker run --rm -it frontend_todo
 run-frontend: build-frontend
-	$(RUN_FRONTEND) npm run dev
+	$(RUN_FRONTEND)
 
 bash-frontend: build-frontend
 	$(RUN_FRONTEND) sh
