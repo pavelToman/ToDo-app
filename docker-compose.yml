@@ -6,3 +6,4 @@ services:
   #     - "8000:8000"
   backend:
     build: src/backend
+    tty: true
