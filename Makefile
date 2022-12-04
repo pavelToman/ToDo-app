@@ -3,6 +3,8 @@ up:
 	docker compose up
 down:
 	docker compose down
+	docker rmi todo-frontend
+	docker rmi todo-backend
 
 # Backend
 build-backend:
