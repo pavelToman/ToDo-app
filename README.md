@@ -4,5 +4,5 @@ There are 2 containers:
 - frontend: Vue3
 # Run by make
 $ make up - run both backend and frontend  
-   Vite servers fontend to host (address is given after container start)  
+   Vite serves fontend to host (address is given after container start)  
    Backend is on localhost:8000  
