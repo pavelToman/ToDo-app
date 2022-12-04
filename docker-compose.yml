@@ -1,13 +1,13 @@
 version: "3.9"
 services:
-  # backend:
-  #   build: src/backend
-  #   container_name: ToDo-backend
-  #   tty: true
+  backend:
+    build: src/backend
+    container_name: ToDo-backend
+    tty: true
+    network_mode: host
   frontend:
     build: src/frontend
     container_name: ToDo-frontend
-    # depends_on:
-    #   - backend
-  #   ports:
-  #     - "8000:8000"
+    tty: true
+    depends_on:
+      - backend

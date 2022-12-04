@@ -5,4 +5,5 @@ COPY . .
 
 RUN npm install
 RUN npm update
-RUN npm run dev
+
+CMD npm run dev
