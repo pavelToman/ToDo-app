@@ -77,22 +77,21 @@ function newDone(note) {
   axios.patch(note.url, { done: note.done });
 }
 function deleteNote(note) {
-  // console.log(note.text);
-  note.text = "DELETEXXX";
-  // console.log(note.text);
   axios.delete(note.url);
-  notes.value = notes.value.filter((note) => note.text !== "DELETEXXX");
+  notes.value = notes.value.filter((x) => x.url !== note.url);
 }
 function deleteList(list) {
   // console.log(list);
   axios.delete(list);
-  location.reload();
+  loadLists();
+  loadNotes();
 }
 function editList() {
   // console.log(selectedList.value);
   // console.log(newListName.value);
   axios.patch(selectedList.value, { name: newListName.value });
-  location.reload();
+  loadLists();
+  loadNotes();
 }
 function editNote(note) {
   axios.patch(note.url, { text: note.text }).then((response) => {
@@ -259,9 +258,9 @@ function formatDate(date) {
                 type="checkbox"
                 v-model="note.done"
                 @change="newDone(note)"
-                id="flexCheckDefault"
+                :id="note.url"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" :for="note.url">
                 <span :class="{ done: note.done }">
                   {{ note.text }}
                 </span>
@@ -284,11 +283,11 @@ function formatDate(date) {
 
 .nav-tabs .nav-item .nav-link:hover {
   background-color: #0d6efd;
-  color: #000000;
+  color: #ffffff;
 }
 .nav-tabs .nav-item .nav-link.active {
   background-color: #0d6efd;
-  color: #000000;
+  color: #ffffff;
 }
 #newList {
   background-color: #000000;

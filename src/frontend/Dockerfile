@@ -4,6 +4,6 @@ WORKDIR /opt/todo
 COPY . .
 
 RUN npm install
-RUN npm update
+#RUN npm update
 
 CMD npm run dev
