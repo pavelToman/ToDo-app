@@ -5,6 +5,8 @@ down:
 	docker compose down
 	docker rmi todo-frontend
 	docker rmi todo-backend
+build:
+	docker compose build
 
 # Backend
 build-backend:
